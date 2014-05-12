@@ -8,7 +8,7 @@
 #ifndef RFM69_h
 #define RFM69_h
 
-#define boolean bool
+#include <stdint.h>
 
 #define RFM69_SPI_WRITE_MASK 0x80
 
@@ -763,7 +763,7 @@ public:
     /// Constructor.
     RFM69( float tempFudge );
   
-    boolean        init();
+    bool        init();
 
     uint8_t        spiRead(uint8_t reg);
 
@@ -779,7 +779,7 @@ public:
 
     uint8_t        mode();
 
-    boolean        checkRx();
+    bool        checkRx();
 
     void        recv(uint8_t* buf, uint8_t* len);
     

@@ -18,7 +18,7 @@ RFM69::RFM69(float tempFudge)
     _temperatureFudge = tempFudge;
 }
 
-boolean RFM69::init()
+bool RFM69::init()
 {
     delay(12);
     _slaveSelectPin = 10;
@@ -112,7 +112,7 @@ uint8_t  RFM69::mode()
     return _mode;
 }
 
-boolean RFM69::checkRx()
+bool RFM69::checkRx()
 {
     // Check IRQ register for payloadready flag (indicates RXed packet waiting in FIFO)
     if(spiRead(RFM69_REG_28_IRQ_FLAGS2) & RF_IRQFLAGS2_PAYLOADREADY) {
